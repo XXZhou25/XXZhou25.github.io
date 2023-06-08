@@ -1,8 +1,8 @@
 ---
 layout: page
-# title: 
+title: 
 permalink: /projects/
-# description: 
+description: 
 nav: true
 nav_order: 2
 display_categories: [work, fun]
