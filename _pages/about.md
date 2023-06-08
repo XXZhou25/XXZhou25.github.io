@@ -5,7 +5,7 @@ permalink: /
 subtitle: 
   <a href='#'>Affiliations</a>. 
   1 Brookings Dr,  St. Louis, MO 63130
-  Email: xiaoxiao.zhou@wustl.edu
+  # Email: xiaoxiao.zhou@wustl.edu
 
 profile:
   align: right
