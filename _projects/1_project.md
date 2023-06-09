@@ -4,7 +4,7 @@ title: project 1
 description: Traffic Sign Recognition and Classification
 img: assets/img/GTSRBExamples.jpg
 importance: 1
-category: work
+category: Machine Learning/Computer Vision
 ---
 
 Extremely high accuracy and efficiency of Traffic Sign Recognition(TSR) are crucial for driving autonomous vehicles(AVs). A new extreme learning machine(ELM) based TSR framework with spatial and time-frequency feature fusion technology, named as STF-ELM, is proposed in this thesis. Histogram equalization is employed to enhance the traffic sign images preprocessing, which contributes to balancing distribution of intensity and sharpness. In addition to the existing histogram of oriented gradients(HOG) for extracting spatial features, the feature based on the time-frequency domain, Gabor filter, is also used. The compressively fused feature vector is mapped to the predicated traffic signs via ELM network. The experimental results showed that the proposed STF-ELM achieved almost perfect performance for NO FAULT on most of categories, and outperformed the state-of-the-art TSR methods on the German Traffic Sign Recognition Benchmark(GTSRB).
