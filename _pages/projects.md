@@ -5,7 +5,7 @@ permalink: /projects/
 description: 
 nav: true
 nav_order: 2
-display_categories: [Machine Learning/Computer Vision, Mechanical Engineering]
+display_categories: 
 horizontal: false
 ---
 
