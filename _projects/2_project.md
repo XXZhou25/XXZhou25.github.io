@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Bspline Registration for 2D images
+title: Spline-based Image Registration
 description: 
 img: assets/img/registrationexample.png
 importance: 2
-category: work
+category: Machine Learning/Computer Vision
 ---
 
 
