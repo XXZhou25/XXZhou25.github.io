@@ -23,10 +23,10 @@ Extremely high accuracy and efficiency of Traffic Sign Recognition(TSR) are cruc
  -->
 
 <div class="row">
-    <div class="col-sm-4 mt-3 mt-md-0">
+    <div class="col-sm-5 mt-3 mt-md-0">
         {% include figure.html path="assets/img/ExamplesofGTSRB.jpg" title="43 types of  traffic signs in the GTSRB dataset" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
+    <div class="col-sm-7.5 mt-3 mt-md-0">
         {% include figure.html path="assets/img/GTSRBCategories.jpg" title="Traffic sign categories in GTSRB dataset" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
