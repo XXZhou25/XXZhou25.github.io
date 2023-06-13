@@ -13,10 +13,8 @@
           alt="project thumbnail" -%}
         {%- endif %}
         <div class="card-body">
-        <div class="container">
-          <h2 class="container-title">{{ project.title }}</h2>
-          <h2>{{ project.title }}</h2>
-          <p class="container-text">{{ project.description }}</p>
+          <h2 class="card-title text-lowercase">{{ project.title }}</h2>
+          <p class="card-text">{{ project.description }}</p>
           <div class="row ml-1 mr-1 p-0">
             {%- if project.github -%}
             <div class="github-icon">
