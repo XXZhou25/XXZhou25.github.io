@@ -1,6 +1,6 @@
 <!-- _includes/projects.html -->
-<!-- <div class="grid-sizer"></div> -->
-<!-- <div class="grid-item"> -->
+<div class="grid-sizer"></div>
+<div class="grid-item">
   {% if project.redirect -%}
   <a href="{{ project.redirect }}">
     {%- else -%}
@@ -12,10 +12,10 @@
           path=project.img
           alt="project thumbnail" -%}
         {%- endif %}
-        <!-- <div class="card-body"> -->
+        <div class="card-body">
         <div class="container">
           <h2 class="container-title">{{ project.title }}</h2>
-          <!-- <h2>{{ project.title }}</h2> -->
+          <h2>{{ project.title }}</h2>
           <p class="container-text">{{ project.description }}</p>
           <div class="row ml-1 mr-1 p-0">
             {%- if project.github -%}
@@ -35,4 +35,4 @@
         </div>
       </div>
     </a>
-<!-- </div> -->
+</div>
