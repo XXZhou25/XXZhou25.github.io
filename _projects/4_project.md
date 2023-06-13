@@ -1,7 +1,7 @@
 ---
 layout: page
-title: project 4
-description: another without an image
+title: Transfer Learning-based Quality Assurance (QA) Model for Medical Image Registration
+description: 
 img:
 importance: 4
 category: Research Projects
