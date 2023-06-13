@@ -175,7 +175,7 @@
 
 <p>To develop a high-performance TSR system, a fundamental approach involves preprocessing the images to enhance clarity and contrast, thereby facilitating the recognition of sign shapes. Additionally, it is crucial to design representative and robust features extracted from the images and employ a classifier that has a good balance between recognition accuracy and efficiency.</p>
 
-<h3 class="container-title"> Method </h3>
+<h3 class="container-title"> Methods </h3>
 
 <p>In light of these considerations, we propose a fast and accurate model called based Extreme Learning Machine Spatial and Time-Frequency Feature Fusion(STF-ELM), combining with an efficient imge preprocessing pipeline. This model leverages the fusion of spatial Histogram of Oriented Gradients (HOG) and time-frequency Gabor features as a hybrid feature representation. This fusion approach ensures robustness to various variations in the image data and sensitivity to edges. Furthermore, our model incorporates the use of the Extreme Learning Machine (ELM), which excels in achieving high prediction accuracy while maintaining rapid learning speeds.</p>
 
@@ -230,6 +230,8 @@
 <div class="caption">
     Table 1. Overall accuracy(%) and performance comparison with different proposed models.
 </div>
+
+<h3 class="container-title"> Results </h3>
 
 <p>From Table 1, we can find that our proposed model STF-ELM based on ELM performs best with the highest testing accuracy of 99.83% and achieves 100% on five categories of six. Also, our model based on KELM gets the second place with accuracy of 99.705%. Compared with other listed ELM-based methods such as HOGv+r(KELM) and DP-KELM, we could suppose that our methods outperform them in TSR whole process. In contrast with other state-of-the-art methods based on CNNs, despite the quite small margins of 0.18% between our methods and Ensemble CNNs, the computational costs of CNNs could be as much as dozens or even hundreds of times higher than our ELM based models.</p>
 
