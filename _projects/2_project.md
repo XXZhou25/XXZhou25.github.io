@@ -38,8 +38,7 @@ In this project, the B-spline registration was implemented, which uses B-spline 
 
 The employed loss function consists of a combination of a similarity metric and a regularization term. Given that the image pairs being registered belong to the same modality, the Sum of Squared Error (SSE) was utilized as the similarity metric. Additionally, the Total Variation method was employed as the regularization term to enhance smoothness in the obtained results. The Gradient Descent was used as the optimization algorithm. 
 
-
-<h3 class="container-title"> Experiments<\h3>
+<h3 class="container-title"> Experiments </h3>
 The algorithem was tested on two pairs of images.
 The first pair of images are as Fig. 3, and the corresponding registered moving image and loss curve are as Fig. 4. 
 
@@ -70,10 +69,10 @@ The first pair of images are as Fig. 3, and the corresponding registered moving 
 The second pair of images are as Fig. 5, and the corresponding registered moving image and loss curve are as Fig. 6. 
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm-4 mt-3 mt-md-0">
         {% include figure.html path="assets/img/Pair2_moving.png" title="A: image to be registered" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm-4 mt-3 mt-md-0">
         {% include figure.html path="assets/img/Pair2_fixed.png" title="B: target image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
@@ -83,10 +82,10 @@ The second pair of images are as Fig. 5, and the corresponding registered moving
 
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm-4 mt-3 mt-md-0">
         {% include figure.html path="assets/img/Pair2_registeredmov.png" title="registered A" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm-4 mt-3 mt-md-0">
         {% include figure.html path="assets/img/Pair2_loss.png" title="Loss curve for registration process" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
@@ -95,14 +94,14 @@ The second pair of images are as Fig. 5, and the corresponding registered moving
 </div>
 
 
-<h3 class="container-title"> Conclusion <\h3>
+<h3 class="container-title"> Conclusion </h3>
 
 It is evident from the observations that the moving image underwent deformation to a certain extent, leading to a decrease in the loss. Overall, the Bspline registration process operated normally, although its deformation capability proved to be relatively limited. To enhance this ability, optimization can be achieved by modifying the transformation model, altering the loss function or optimization method, and fine-tuning the parameters such as the number of control points and learning rate.
 
 
 
 
-<h4 class="container-title"> Reference <\h4>
-    [1]. Shackleford J, Kandasamy N, Sharp G. Unimodal b-spline registration[J]. High Performance Deformable Image Registration Algorithms for Manycore Processors, 2013: 13-43.
-    [2]. Brock K K, Mutic S, McNutt T R, et al. Use of image registration and fusion algorithms and techniques in radiotherapy: Report of the AAPM Radiation Therapy Committee Task Group No. 132[J]. Medical physics, 2017, 44(7): e43-e76.
-    [3]. Shackelford J, Kandasamy N, Sharp G. Deformable Volumetric Registration Using B-Splines[M]//GPU Computing Gems Emerald Edition. Morgan Kaufmann, 2011: 751-770.
+<h4 class="container-title"> Reference </h4>
+[1]. Shackleford J, Kandasamy N, Sharp G. Unimodal b-spline registration[J]. High Performance Deformable Image Registration Algorithms for Manycore Processors, 2013: 13-43.
+[2]. Brock K K, Mutic S, McNutt T R, et al. Use of image registration and fusion algorithms and techniques in radiotherapy: Report of the AAPM Radiation Therapy Committee Task Group No. 132[J]. Medical physics, 2017, 44(7): e43-e76.
+[3]. Shackelford J, Kandasamy N, Sharp G. Deformable Volumetric Registration Using B-Splines[M]//GPU Computing Gems Emerald Edition. Morgan Kaufmann, 2011: 751-770.
