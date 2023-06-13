@@ -4,7 +4,7 @@ title: Spline-based Image Registration
 description: Implemented from scratch in Python
 img: assets/img/registrationexample.png
 importance: 2
-category: 
+category: Research Projects
 ---
 
 <h3 class="container-title"> Introduction </h3>
@@ -23,7 +23,7 @@ Image registration can be modeled as an optimization problem. In general, it has
     Fig 1. Basic process of image registration algorithm[2]
 </div>
 
-<h3 class="container-title"> Method </h3>
+<h3 class="container-title"> Methods </h3>
 
 In this project, the B-spline registration was implemented, which uses B-spline curves to define a continuous deformation field that maps each voxel in a moving image to a corresponding voxel within a fixed or reference image. In the case of B-spline registration, the dense deformation field can be parameterized by a sparse set of control points which are uniformly distributed throughout the moving image’s voxel grid. The control points are free to move, the displacment vectors of other points are obtained by B-spline interpolation of these control point coefficients using piecewise continuous B-spline basis functions. 
 
@@ -94,7 +94,7 @@ The second pair of images are as Fig. 5, and the corresponding registered moving
 </div>
 
 
-<h3 class="container-title"> Conclusion </h3>
+<h3 class="container-title"> Results and conclusion </h3>
 
 It is evident from the observations that the moving image underwent deformation to a certain extent, leading to a decrease in the loss. Overall, the Bspline registration process operated normally, although its deformation capability proved to be relatively limited. To enhance this ability, optimization can be achieved by modifying the transformation model, altering the loss function or optimization method, and fine-tuning the parameters such as the number of control points and learning rate.
 
