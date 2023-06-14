@@ -1,51 +1,67 @@
 ---
 layout: page
-title: Transfer Learning-based Quality Assurance (QA) Model for Medical Image Registration
-description: 
+title: Unsupervised Deformable Registration DNN for 3D Medical Images
+description: Implemented by myself in Keras/Tensorflow/PyTorch, advised by Dr. Geoffrey Hugo
 img:
 importance: 4
 category: Research Projects
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+<h3 class="container-title"> Introduction </h3>
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Deformable registration is a widely used technique in various image-related tasks. Within clinical settings, medical images provide crucial information about the pathology and associated anatomy of the human body. Physicians often seek to compare two images of the same anatomical area captured under different conditions or integrate all available image data to gain a more comprehensive understanding of the regions of interest.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Conventional registration methods (non-lerning-based) involve optimizing an objective function for each image pair, which can be time-consuming when dealing with large datasets or complex deformation models. To address this challenge, neural network-based registration models are becoming an active research area, with numerous proposed approaches. Among these models, Voxelmorph is trained through unsupervised learning and has had a notable impact. Given a pair of images, Voxelmorph can rapidly compute a deformation field directly. 
+
+The purpose of this project is to build a reliable DNN-based registration model for 3D lung CT images. This project entails exploring various DNN-based registration methods and implemented some of them, with specific emphasis on studying Voxelmorph, and variations on Voxelmorph are proposed. 
+
+<h3 class="container-title"> Methods </h3>
+
+Given the inherent complexity nature of lung structures and the challenges of registering image pairs with significant anatomical variations, a multi-level registration strategy is proposed to apply to the Voxelmorph model. The strategy computes deformation fields on different scales, a coarse-level alignment is obtained
+first, which is subsequently improved on finer levels. 
+
+My proposed multi-level strategy: 
+<ol>
+    <li>1st level DNN has two downsampling layer in its first two layers, two upsampling layers at the end. 1st level DNN will be trained until its loss satisfy our criteria. </li>
+    <li>2nd level DNN has one downsampling layer in its first layer, one upsampling layer at the end. 
+    Fix the 1st level DNN, the output of it will be the input of the 2nd level DNN. 2nd level DNN will be trained until its loss satisfy our criteria. </li>
+    <li>After 1st & 2nd level DNNs are trained seperately, the combination of them will be retrained again on the same data, to refine this process. </li>
+</ol>
+Basically, the strategy is highly adaptable and levels could be increased according to the requirements and the memory of GPU and CPU. 
+
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/Voxelmorph.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+    Figure 1. Overview of Voxelmorph model framework[1]
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, *bled* for your project, and then... you reveal its glory in the next row of images.
+
+
+
+<h3 class="container-title"> Datasets </h3>
+
+Deformable Image Registration Laboratory (Dirlab) 4DCT, https://med.emory.edu/departments/radiation-oncology/research-laboratories/deformable-image-registration/index.html
+
+The Dirlab dataset is obtained from a group of 10 patients diagnosed with thoracic malignancies, and for each patient, a series of 10 consecutive CT scans capturing the complete breath cycle, ranging from inhalation to exhalation, is included in the dataset.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/DirlabExample.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Figure 2. Example: one pair of 3D CT images from a patient in Dirlab dataset. 
+</div>
+
+
+<h3 class="container-title"> Framework 1: Multi-level Voxelmorph model on 3D lung CT image pairs </h3>
+
+
+
 
 
 <div class="row justify-content-sm-center">
@@ -64,17 +80,8 @@ You describe how you toiled, sweated, *bled* for your project, and then... you r
 The code is simple.
 Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
 To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
 
-{% raw %}
-```html
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-```
-{% endraw %}
+
+<h4 class="container-title"> Reference </h4>
+[1]. Balakrishnan G, Zhao A, Sabuncu M R, et al. Voxelmorph: a learning framework for deformable medical image registration[J]. IEEE transactions on medical imaging, 2019, 38(8): 1788-1800.
+

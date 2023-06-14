@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Traffic Sign Recognition
-description: 
+description: Implemented by myself, advised by Dr. Yang
 img: assets/img/GTSRBExamples.jpg
 importance: 1
 category: Research Projects

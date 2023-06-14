@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Spline-based Image Registration
-description: Implemented from scratch in Python
+description: Implemented from scratch in Python, advised by Dr. Geoffrey Hugo
 img: assets/img/registrationexample.png
 importance: 2
 category: Research Projects
