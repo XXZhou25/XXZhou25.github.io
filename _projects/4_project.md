@@ -20,15 +20,14 @@ The purpose of this project is to build a reliable DNN-based registration model 
 Given the inherent complexity nature of lung structures and the challenges of registering image pairs with significant anatomical variations, a multi-level registration strategy is proposed to apply to the Voxelmorph model. The strategy computes deformation fields on different scales, a coarse-level alignment is obtained
 first, which is subsequently improved on finer levels. 
 
-My proposed multi-level strategy: 
+The multi-level registration strategy I proposed: 
 <ol>
     <li>1st level DNN has two downsampling layer in its first two layers, two upsampling layers at the end. 1st level DNN will be trained until its loss satisfy our criteria. </li>
     <li>2nd level DNN has one downsampling layer in its first layer, one upsampling layer at the end. 
     Fix the 1st level DNN, the output of it will be the input of the 2nd level DNN. 2nd level DNN will be trained until its loss satisfy our criteria. </li>
-    <li>After 1st & 2nd level DNNs are trained seperately, the combination of them will be retrained again on the same data, to refine this process. </li>
+    <li>Once the 1st and 2nd level DNNs have been trained independently, they will be combined and retrained using the same dataset. This iterative process aims to refine the performance and accuracy of the combined model. </li>
 </ol>
-Basically, the strategy is highly adaptable and levels could be increased according to the requirements and the memory of GPU and CPU. 
-
+This strategy offers adaptability as the number of levels can be increased or decreased based on specific requirements and the available memory of the machine.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -39,6 +38,16 @@ Basically, the strategy is highly adaptable and levels could be increased accord
     Figure 1. Overview of Voxelmorph model framework[1]
 </div>
 
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/multilevelstrategy.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Figure 2. The proposed multi-level registration strategy
+</div>
+
+
 
 
 
@@ -46,7 +55,9 @@ Basically, the strategy is highly adaptable and levels could be increased accord
 
 Deformable Image Registration Laboratory (Dirlab) 4DCT, https://med.emory.edu/departments/radiation-oncology/research-laboratories/deformable-image-registration/index.html
 
-The Dirlab dataset is obtained from a group of 10 patients diagnosed with thoracic malignancies, and for each patient, a series of 10 consecutive CT scans capturing the complete breath cycle, ranging from inhalation to exhalation, is included in the dataset.
+The Dirlab dataset is obtained from a group of 10 patients diagnosed with thoracic malignancies, and for each patient, a series of 10 consecutive CT scans capturing the complete breath cycle, ranging from inhalation to exhalation, is included in the dataset. Each available image data set has associated with it a coordinate list of anatomical landmarks that have been manually identified and registered by an expert in thoracic imaging, with repeat registration performed by multiple observers to estimate the spatial variance in feature identification. The point sets serve as a reference for evaluating DIR spatial accuracy within the lung for each case. The mean distance between corresponding landmark pairs on two images is defined as Landmark Distance Error(LDE). 
+
+
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -58,28 +69,21 @@ The Dirlab dataset is obtained from a group of 10 patients diagnosed with thorac
 </div>
 
 
-<h3 class="container-title"> Framework 1: Multi-level Voxelmorph model on 3D lung CT image pairs </h3>
+<h3 class="container-title"> Experiments </h3>
 
+The multi-level Voxelmorph is trained on Dirlab, test on an in-house 4DCT dataset. 
 
-
-
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.html path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/Dirlabtraining.png" title="example image" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/Dirlabtraining.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
 </div>
-
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
 
 
 <h4 class="container-title"> Reference </h4>
