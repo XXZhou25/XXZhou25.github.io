@@ -1,6 +1,6 @@
 <!-- _includes/projects.html -->
-<!-- <div class="grid-sizer"></div>
-<div class="grid-item"> -->
+<div class="grid-sizer"></div>
+<div class="grid-item">
   {% if project.redirect -%}
   <a href="{{ project.redirect }}">
     {%- else -%}
@@ -15,7 +15,7 @@
         <div class="card-body">
           <h4 class="card-title text-lowercase">{{ project.title }}</h4>
           <!-- <p class="card-text">{{ project.description }}</p> -->
-          <div class="col ml-1 mr-1 p-0">
+          <div class="row ml-1 mr-1 p-0">
             {%- if project.github -%}
             <div class="github-icon">
               <div class="icon" data-toggle="tooltip" title="Code Repository">
