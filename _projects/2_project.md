@@ -8,7 +8,7 @@ category: Research Projects
 github: https://github.com/XXZhou25/Bspline-registration.git
 ---
 
-<a href="https://drive.google.com/file/d/1tbEq5cUqf1oVPBx8e5KS1l04Wh_IdN5N/view?usp=drive_link"> Paper link </a>
+<a href="https://drive.google.com/file/d/1luexi8lNTgrg2jUrAnL0xlHF90VEKbuG/view?usp=drive_link"> Paper link </a>
 <a href="https://github.com/XXZhou25/Bspline-registration.git"> Source code link </a>
 
 <h3 class="container-title"> Introduction </h3>
