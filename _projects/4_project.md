@@ -52,7 +52,8 @@ This strategy offers adaptability as the number of levels can be increased or de
 <h3 class="container-title"> Experiments </h3>
 
 The multi-level Voxelmorph is trained on Dirlab, tested on an 4D lungCT dataset. 
-<h5 class="container-title"> Training dataset: Dirlab </h5>
+<ol>
+    <li><h5 class="container-title"> Training dataset: Dirlab </h5></li>
 Deformable Image Registration Laboratory (Dirlab) 4DCT, https://med.emory.edu/departments/radiation-oncology/research-laboratories/deformable-image-registration/index.html
 
 The Dirlab dataset is obtained from a group of 10 patients diagnosed with thoracic malignancies, and for each patient, a series of 10 consecutive CT scans capturing the complete breath cycle, ranging from inhalation to exhalation, is included in the dataset. For each patient, the breath-in and breath-out images are all manually annotated with 300 landmarks by an expert distributed in the lung parenchyma. The point sets serve as a reference for evaluating DIR spatial accuracy within the lung for each case. The mean distance between corresponding landmark pairs on two images is defined as Landmark Distance Error(LDE). 
@@ -67,7 +68,7 @@ The Dirlab dataset is obtained from a group of 10 patients diagnosed with thorac
     Figure 3. Example: one pair of 3D CT images from a patient in Dirlab dataset. 
 </div>
 
-<h5 class="container-title"> Testing dataset: 4D lungCT dataset </h5>
+<li><h5 class="container-title"> Testing dataset: 4D lungCT dataset </h5></li>
 This dataset is collected by Virginia Commonwealth University(VCU), which includes 17 patients who have atelectasis (partially collapsed lung). Each patient has one pair of CT scans before and after some treatment. 
 On average, there were 169 landmarks per patient, with a standard deviation of 31 landmarks. Testing data differed from training data as they had large anatomical deformations compared to training data, and contained landmarks that were annotated by different experts. 
 
@@ -79,7 +80,7 @@ On average, there were 169 landmarks per patient, with a standard deviation of 3
 <div class="caption">
     Figure 4. Example: one pair of 3D CT images from a patient in 4D lung CT dataset. 
 </div>
-
+</ol>
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
