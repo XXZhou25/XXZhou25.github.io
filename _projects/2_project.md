@@ -3,7 +3,7 @@ layout: page
 title: Spline-based Image Registration
 description: Implemented from scratch in Python by myself, advised by Dr. Geoffrey Hugo
 img: assets/img/registrationexample.png
-importance: 2
+importance: 3
 category: Research Projects
 github: https://github.com/XXZhou25/Bspline-registration.git
 ---

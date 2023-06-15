@@ -4,7 +4,7 @@ title: Out of Sample Performance of a Deep Learning Based Registration Quality A
 description: Implemented by myself, advised by Dr. Geoffrey Hugo
 img: assets/img/2D_views_60.jpg
 # redirect: https://unsplash.com
-importance: 3
+importance: 1
 category: Research Projects
 ---
 

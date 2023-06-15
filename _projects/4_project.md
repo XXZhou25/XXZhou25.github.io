@@ -3,7 +3,7 @@ layout: page
 title: Multilevel Deformable Registration DNN for 3D Medical Images
 description: Implemented by myself in Keras/Tensorflow/PyTorch, advised by Dr. Geoffrey Hugo
 img: assets/img/multilevelstrategy.png
-importance: 4
+importance: 2
 category: Research Projects
 ---
 
