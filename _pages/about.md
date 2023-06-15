@@ -24,6 +24,6 @@ social: true  # includes social icons at the bottom of the page
 
 I am actively seeking a full-time position in the fields of computer science, software development, machine learning, and data science.
 
-In my previous role, I worked as a Research Assistant at Washington University in St. Louis School of Medicine in Dr. Geoffrey Hugo's lab. Our research focused on developing effective tools utilizing machine learning and deep neural networks, for high-performance medical image registration and its quality assessment.
+<!-- In my previous role, I worked as a Research Assistant at Washington University in St. Louis School of Medicine in Dr. Geoffrey Hugo's lab. Our research focused on developing effective tools utilizing machine learning and deep neural networks, for high-performance medical image registration and its quality assessment. -->
 
  
