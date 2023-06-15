@@ -6,7 +6,7 @@
     {%- else -%}
     <a href="{{ project.url | relative_url }}">
       {%- endif %}
-      <div class="card hoverable" style="width: 25rem;">
+      <div class="card hoverable">
         {%- if project.img %}
         {%- include figure.html
           path=project.img
@@ -33,4 +33,4 @@
         </div>
       </div>
     </a>
-<!-- </div> -->
+</div>
