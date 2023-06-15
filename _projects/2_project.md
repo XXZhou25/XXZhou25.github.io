@@ -5,6 +5,7 @@ description: Implemented from scratch in Python, advised by Dr. Geoffrey Hugo
 img: assets/img/registrationexample.png
 importance: 2
 category: Research Projects
+github: https://github.com/XXZhou25/Bspline-registration.git
 ---
 
 <h3 class="container-title"> Introduction </h3>
