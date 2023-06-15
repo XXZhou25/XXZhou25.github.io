@@ -4,7 +4,7 @@
   {%- else -%}
   <a href="{{ project.url | relative_url }}">
   {%- endif -%}
-    <div class="card hoverable">
+    <div class="card hoverable" style="width: 18rem;">
       <div class="row g-0">
         {%- if project.img -%}
         <div class="card-img col-md-6">
@@ -15,7 +15,7 @@
         <div class="col-md-12">
         {%- endif -%}
           <div class="card-body">
-            <h5 class="card-title text-lowercase">{{ project.title }}</h5>
+            <h5 class="card-title text-capitalize">{{ project.title }}</h5>
             <!-- <p class="card-text">{{ project.description }}</p> -->
             <div class="row ml-1 mr-1 p-0">
               {%- if project.github -%}
