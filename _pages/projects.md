@@ -6,7 +6,7 @@ description:
 nav: true
 nav_order: 2
 display_categories: [Research Projects, Course Projects]
-horizontal: false
+horizontal: true
 ---
 
 <!-- pages/projects.md -->
