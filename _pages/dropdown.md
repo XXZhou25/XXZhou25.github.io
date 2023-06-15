@@ -6,8 +6,8 @@ nav_order: 6
 dropdown: true
 children: 
     - title: Kitty
-      permalink: /publications/
+      permalink: /Kitty/
     # - title: divider
-    - title: World travel
-      permalink: /projects/
+    - title: Steps around the world
+      # permalink: /projects/
 ---
