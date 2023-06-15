@@ -53,10 +53,11 @@ This strategy offers adaptability as the number of levels can be increased or de
 
 <h3 class="container-title"> Datasets </h3>
 
+
+<h5 class="container-title"> Training dataset: Dirlab </h5>
 Deformable Image Registration Laboratory (Dirlab) 4DCT, https://med.emory.edu/departments/radiation-oncology/research-laboratories/deformable-image-registration/index.html
 
-The Dirlab dataset is obtained from a group of 10 patients diagnosed with thoracic malignancies, and for each patient, a series of 10 consecutive CT scans capturing the complete breath cycle, ranging from inhalation to exhalation, is included in the dataset. Each available image data set has associated with it a coordinate list of anatomical landmarks that have been manually identified and registered by an expert in thoracic imaging, with repeat registration performed by multiple observers to estimate the spatial variance in feature identification. The point sets serve as a reference for evaluating DIR spatial accuracy within the lung for each case. The mean distance between corresponding landmark pairs on two images is defined as Landmark Distance Error(LDE). 
-
+The Dirlab dataset is obtained from a group of 10 patients diagnosed with thoracic malignancies, and for each patient, a series of 10 consecutive CT scans capturing the complete breath cycle, ranging from inhalation to exhalation, is included in the dataset. For each patient, the breath-in and breath-out images are all manually annotated with 300 landmarks by an expert distributed in the lung parenchyma. The point sets serve as a reference for evaluating DIR spatial accuracy within the lung for each case. The mean distance between corresponding landmark pairs on two images is defined as Landmark Distance Error(LDE). 
 
 
 <div class="row">
@@ -66,6 +67,19 @@ The Dirlab dataset is obtained from a group of 10 patients diagnosed with thorac
 </div>
 <div class="caption">
     Figure 2. Example: one pair of 3D CT images from a patient in Dirlab dataset. 
+</div>
+
+<h5 class="container-title"> Testing dataset: 4D lung CT dataset </h5>
+This dataset is collected by Virginia Commonwealth University(VCU), which includes 17 patients who have atelectasis (partially collapsed lung). Each patient has one pair of CT scans before and after some treatment. 
+On average, there were 169 landmarks per patient, with a standard deviation of 31 landmarks. Testing data differed from training data as they had large anatomical deformations compared to training data, and contained landmarks that were annotated by different experts. 
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.html path="assets/img/VCUexample.png" title="example image" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Figure 3. Example: one pair of 3D CT images from a patient in 4D lung CT dataset. 
 </div>
 
 
@@ -88,4 +102,5 @@ The multi-level Voxelmorph is trained on Dirlab, test on an in-house 4DCT datase
 
 <h4 class="container-title"> Reference </h4>
 [1]. Balakrishnan G, Zhao A, Sabuncu M R, et al. Voxelmorph: a learning framework for deformable medical image registration[J]. IEEE transactions on medical imaging, 2019, 38(8): 1788-1800.
+[2]. Galib, Shaikat M., et al. "A fast and scalable method for quality assurance of deformable image registration on lung CT scans using convolutional neural networks." Medical physics 47.1 (2020): 99-109.
 
