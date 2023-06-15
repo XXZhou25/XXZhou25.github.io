@@ -8,8 +8,7 @@ category: Research Projects
 github: https://github.com/XXZhou25/Traffic-Sign-Recognition-and-Classificatfion.git
 ---
 
-<h6> Paper link: </h6>
-<a href="'assets/pdf/Extreme Learning Machine with Spatial and Time-Frequency Feature Fusion for High Performance Traffic Sign Recognition.pdf}">
+<a href="'assets/pdf/Extreme Learning Machine with Spatial and Time-Frequency Feature Fusion for High Performance Traffic Sign Recognition.pdf}"> Paper link </a>
 
 <h3 class="container-title"> Abstract </h3>
 
