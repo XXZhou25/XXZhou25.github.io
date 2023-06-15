@@ -10,10 +10,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Projects | Xiaoxiao Zhou</title>
+    <title>Transfer learning-based Quality Assurance (QA) model for medical image registration | Xiaoxiao Zhou</title>
     <meta name="author" content="Xiaoxiao  Zhou">
-    <meta name="description" content="Xiaoxiao's personal website
-">
+    <meta name="description" content="Implemented by myself in Keras/Tensorflow, advised by Dr. Geoffrey Hugo">
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
 
 
@@ -39,7 +38,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://xxzhou25.github.io/projects/">
+    <link rel="canonical" href="https://xxzhou25.github.io/projects/5_project/">
 
     <!-- Dark Mode -->
     
@@ -79,8 +78,8 @@
               
 
               <!-- Other pages -->
-              <li class="nav-item active">
-                <a class="nav-link" href="/projects/">Projects<span class="sr-only">(current)</span></a>
+              <li class="nav-item ">
+                <a class="nav-link" href="/projects/">Projects</a>
               </li>
               <li class="nav-item dropdown ">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Just for fun</a>
@@ -118,113 +117,54 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">Projects</h1>
-            <p class="post-description"></p>
+            <h1 class="post-title">Transfer learning-based Quality Assurance (QA) model for medical image registration</h1>
+            <p class="post-description">Implemented by myself in Keras/Tensorflow, advised by Dr. Geoffrey Hugo</p>
           </header>
 
           <article>
-            <!-- pages/projects.md -->
-<div class="projects">
-  <!-- Display categorized projects -->
-  <h2 class="category">Research Projects</h2>
-  <!-- Generate cards for each project -->
-  <div class="grid">
-<!-- _includes/projects.html -->
-<div class="grid-sizer"></div>
-<div class="grid-item">
-  <a href="/projects/1_project/">
-      <div class="card hoverable">
-<figure>
+            <h3 class="container-title"> Introduction </h3>
+
+<h3 class="container-title"> Methods </h3>
+
+<p>Given the inherent complexity nature of lung structures and the challenges of registering image pairs with significant anatomical variations, a multi-level registration strategy is proposed to apply to the Voxelmorph model. The strategy computes deformation fields on different scales, a coarse-level alignment is obtained
+first, which is subsequently improved on finer levels.</p>
+
+<p>The multi-level registration strategy I proposed:</p>
+<ol>
+    <li>1st level DNN has two downsampling layer in its first two layers, two upsampling layers at the end. 1st level DNN will be trained until its loss satisfy our criteria. </li>
+    <li>2nd level DNN has one downsampling layer in its first layer, one upsampling layer at the end. 
+    Fix the 1st level DNN, the output of it will be the input of the 2nd level DNN. 2nd level DNN will be trained until its loss satisfy our criteria. </li>
+    <li>Once the 1st and 2nd level DNNs have been trained independently, they will be combined and retrained using the same dataset. This iterative process aims to refine the performance and accuracy of the combined model. </li>
+</ol>
+<p>This strategy offers adaptability as the number of levels can be increased or decreased based on specific requirements and the available memory of the machine.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
 
   <picture>
     
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/GTSRBExamples-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/GTSRBExamples-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/GTSRBExamples-1400.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/Voxelmorph-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/Voxelmorph-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/Voxelmorph-1400.webp"></source>
     
 
     <!-- Fallback to the original file -->
-    <img src="/assets/img/GTSRBExamples.jpg" width="auto" height="auto" alt="project thumbnail" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="/assets/img/Voxelmorph.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
 
   </picture>
 
 </figure>
 
-        <div class="card-body">
-          <h5 class="card-title text-lowercase">Traffic Sign Recognition</h5>
-          <!-- <p class="card-text">Implemented by myself, advised by Dr. Yang</p> -->
-          <div class="row ml-1 mr-1 p-0">
-          </div>
-        </div>
-      </div>
-    </a>
+    </div>
 </div>
-<!-- _includes/projects.html -->
-<div class="grid-sizer"></div>
-<div class="grid-item">
-  <a href="/projects/2_project/">
-      <div class="card hoverable">
-<figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/registrationexample-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/registrationexample-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/registrationexample-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/registrationexample.png" width="auto" height="auto" alt="project thumbnail" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-        <div class="card-body">
-          <h5 class="card-title text-lowercase">Spline-based Image Registration</h5>
-          <!-- <p class="card-text">Implemented from scratch in Python, advised by Dr. Geoffrey Hugo</p> -->
-          <div class="row ml-1 mr-1 p-0">
-          </div>
-        </div>
-      </div>
-    </a>
+<div class="caption">
+    Figure 1. Overview of Voxelmorph model framework[1]
 </div>
-<!-- _includes/projects.html -->
-<div class="grid-sizer"></div>
-<div class="grid-item">
-  <a href="/projects/3_project/">
-      <div class="card hoverable">
-<figure>
 
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2D_views_60-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2D_views_60-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2D_views_60-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/2D_views_60.jpg" width="auto" height="auto" alt="project thumbnail" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-        <div class="card-body">
-          <h5 class="card-title text-lowercase">Out of Sample Performance of a Deep Learning Based Registration Quality Assurance Method</h5>
-          <!-- <p class="card-text">Implemented by myself, advised by Dr. Geoffrey Hugo</p> -->
-          <div class="row ml-1 mr-1 p-0">
-          </div>
-        </div>
-      </div>
-    </a>
-</div>
-<!-- _includes/projects.html -->
-<div class="grid-sizer"></div>
-<div class="grid-item">
-  <a href="/projects/4_project/">
-      <div class="card hoverable">
-<figure>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
 
   <picture>
     
@@ -234,57 +174,132 @@
     
 
     <!-- Fallback to the original file -->
-    <img src="/assets/img/multilevelstrategy.png" width="auto" height="auto" alt="project thumbnail" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="/assets/img/multilevelstrategy.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
 
   </picture>
 
 </figure>
 
-        <div class="card-body">
-          <h5 class="card-title text-lowercase">Multilevel Deformable Registration DNN for 3D Medical Images</h5>
-          <!-- <p class="card-text">Implemented by myself in Keras/Tensorflow/PyTorch, advised by Dr. Geoffrey Hugo</p> -->
-          <div class="row ml-1 mr-1 p-0">
-          </div>
-        </div>
-      </div>
-    </a>
+    </div>
 </div>
-<!-- _includes/projects.html -->
-<div class="grid-sizer"></div>
-<div class="grid-item">
-  <a href="/projects/5_project/">
-      <div class="card hoverable">
-<figure>
+<div class="caption">
+    Figure 2. The proposed multi-level registration strategy
+</div>
+
+<h3 class="container-title"> Experiments </h3>
+
+<p>The multi-level Voxelmorph is trained on Dirlab, tested on an 4D lungCT dataset.</p>
+<ul><h5 class="container-title"> Training dataset: Dirlab </h5></ul>
+<p>Deformable Image Registration Laboratory (Dirlab) 4DCT, https://med.emory.edu/departments/radiation-oncology/research-laboratories/deformable-image-registration/index.html</p>
+
+<p>The Dirlab dataset is obtained from a group of 10 patients diagnosed with thoracic malignancies, and for each patient, a series of 10 consecutive CT scans capturing the complete breath cycle, ranging from inhalation to exhalation, is included in the dataset. For each patient, the breath-in and breath-out images are all manually annotated with 300 landmarks by an expert distributed in the lung parenchyma. The point sets serve as a reference for evaluating DIR spatial accuracy within the lung for each case. The mean distance between corresponding landmark pairs on two images is defined as Landmark Distance Error(LDE).</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
 
   <picture>
     
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/multilevelstrategy-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/multilevelstrategy-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/multilevelstrategy-1400.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/DirlabExample-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/DirlabExample-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/DirlabExample-1400.webp"></source>
     
 
     <!-- Fallback to the original file -->
-    <img src="/assets/img/multilevelstrategy.png" width="auto" height="auto" alt="project thumbnail" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="/assets/img/DirlabExample.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
 
   </picture>
 
 </figure>
 
-        <div class="card-body">
-          <h5 class="card-title text-lowercase">Transfer learning-based Quality Assurance (QA) model for medical image registration</h5>
-          <!-- <p class="card-text">Implemented by myself in Keras/Tensorflow, advised by Dr. Geoffrey Hugo</p> -->
-          <div class="row ml-1 mr-1 p-0">
-          </div>
-        </div>
-      </div>
-    </a>
+    </div>
 </div>
-  </div>
-  <h2 class="category">Course Projects</h2>
-  <!-- Generate cards for each project -->
-  <div class="grid">
-  </div>
+<div class="caption">
+    Figure 3. Example: one pair of 3D CT images from a patient in Dirlab dataset. 
 </div>
+
+<ul><h5 class="container-title"> Testing dataset: 4D lungCT dataset </h5></ul>
+<p>This dataset is collected by Virginia Commonwealth University(VCU), which includes 17 patients who have atelectasis (partially collapsed lung). Each patient has one pair of CT scans before and after some treatment. 
+On average, there were 169 landmarks per patient, with a standard deviation of 31 landmarks. Testing data differed from training data as they had large anatomical deformations compared to training data, and contained landmarks that were annotated by different experts.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/VCUexample-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/VCUexample-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/VCUexample-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/VCUexample.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Figure 4. Example: one pair of 3D CT images from a patient in 4D lung CT dataset. 
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/Dirlabtraining-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/Dirlabtraining-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/Dirlabtraining-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/Dirlabtraining.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/multileveloncaliper-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/multileveloncaliper-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/multileveloncaliper-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/multileveloncaliper.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h3 class="container-title"> Results </h3>
+
+<p>Based on the given training data, the Dirlab dataset, the model performs normally by significantly reducing the landmarks distance error (LDE) for image pairs. However, when evaluating the model’s performance on the testing data from the 4D LungCT dataset, a relatively smaller reduction in LDE is observed. This outcome can be attributed to the inherent characteristics of the 4D LungCT dataset, which exhibits larger and more intricate anatomical variations resulting from treatment, in contrast to the Dirlab dataset that involves a breath cycle with no significant anatomical changes. Thus, the observed differences in LDE reduction between the two datasets can be deemed reasonable and aligned with expectations.</p>
+
+<h3 class="container-title"> Conclusions </h3>
+
+<p>In this project, we have investigated a DNN-based deformable registration method for 3D lung CTs. The model was trained on a small size public dataset and subsequently evaluated on a more complex in-house dataset. The results obtained from the testing dataset have showcased promising registration capabilities, despite the absence of significant variations observed in training data. Nevertheless, there remain several aspects for further exploration to enhance the model’s performance. These include investigating the impact of training data size and diversity, refining the model structure, and exploring the potential benefits of a multi-level registration strategy.</p>
+
+<h4 class="container-title"> Reference </h4>
+<p>[1]. Balakrishnan G, Zhao A, Sabuncu M R, et al. Voxelmorph: a learning framework for deformable medical image registration[J]. IEEE transactions on medical imaging, 2019, 38(8): 1788-1800.
+[2]. Galib, Shaikat M., et al. “A fast and scalable method for quality assurance of deformable image registration on lung CT scans using convolutional neural networks.” Medical physics 47.1 (2020): 99-109.</p>
+
 
           </article>
 
