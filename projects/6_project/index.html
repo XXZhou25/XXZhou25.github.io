@@ -3,17 +3,17 @@
 
   <!-- Head -->
   <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="refresh" content="3; url=/">    <!-- Metadata, OpenGraph and Schema.org -->
     
 
     <!-- Standard metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Projects | Xiaoxiao Zhou</title>
+    <title>Measuring sperm cell length | Xiaoxiao Zhou</title>
     <meta name="author" content="Xiaoxiao  Zhou">
-    <meta name="description" content="Xiaoxiao's personal website
-">
+    <meta name="description" content="Computational Geometry related, corperated with Yukun Li">
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
 
 
@@ -39,7 +39,7 @@
     <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://xxzhou25.github.io/projects/">
+    <link rel="canonical" href="https://xxzhou25.github.io/projects/6_project/">
 
     <!-- Dark Mode -->
     
@@ -79,8 +79,8 @@
               
 
               <!-- Other pages -->
-              <li class="nav-item active">
-                <a class="nav-link" href="/projects/">Projects<span class="sr-only">(current)</span></a>
+              <li class="nav-item ">
+                <a class="nav-link" href="/projects/">Projects</a>
               </li>
               <li class="nav-item dropdown ">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Just for fun</a>
@@ -118,193 +118,40 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">Projects</h1>
-            <p class="post-description"></p>
+            <h1 class="post-title">Measuring sperm cell length</h1>
+            <p class="post-description">Computational Geometry related, corperated with Yukun Li</p>
           </header>
 
           <article>
-            <!-- pages/projects.md -->
-<div class="projects">
-  <!-- Display categorized projects -->
-  <h2 class="category">Research Projects</h2>
-  <!-- Generate cards for each project -->
-  <div class="container">
-    <div class="row row-cols-2">
-<div class="card-item col">
-<a href="/projects/3_project/"><div class="card hoverable">
-      <div class="row g-0">
-<div class="card-img col-md-12">
-          <figure>
+            <h3 class="container-title"> Introduction </h3>
 
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2D_views_60-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2D_views_60-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2D_views_60-1400.webp"></source>
-    
+<p>In the life science area, some scientists study the genetic basis of sperm length and need to look at the effect on sperm length while knocking out individual genes. So, it is essential to measure the length of sperm cells quickly and accurately. And it is unreliable to undertake such a task via manually selecting the location of cells. Therefore, there is a need to find a better method to measure the length of cells automatically. In this project, it built an interactive tool to measure the sperm cell length semi-automatically. The programming language is Python. It used PyQt5 to implement GUI, Numpy,OpenCV to implement algorithms.</p>
 
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/2D_views_60.jpg" width="auto" height="auto" alt="project thumbnail" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+<h3 class="container-title"> Reuired Features </h3>
+<ol>
+    <li>Calculate the length of sperm cells from images (shown in Fig.1) automatically </li>
+    <li>Users can draw region-of-interest </li>
+    <li>The threshold value can be selected by users as needed </li>
+</ol>
 
-  </picture>
+<h3 class="container-title"> Methods </h3>
 
-</figure>
+<ol>
+    <li>Preprocess </li>
+    	<ul> 
+    		<li>For low-contrast images, histogram equalization was applied to enhace the image contrast. </li>
+    		<li>Normalization[1] was performed to remove the gray-level deformation by subtracting an approxi- mate background from the original gray image. The approximate background is estimated using a 25*25 median filter on the original image. We use this to remove te big spot noises.</li>
+    		<li>The adaptive local thresholds were applied to the normalized image.Fig.5 Adaptive thresholding was chosen because the image had different lighting conditions in different areas, and adaptive thresholding could calculate threshold values based on surrounding pixels.</li>
+   		</ul>
+    <li>Extract cells </li>
+    <li>Apply user interaction to remove some spurious branches from the thinning results. For this step, we ask the user to choose several points on the part you want to remove, and then it can detect the closest point on the closest component and set the 3*3 neighbor of that point to 0. Then it refind the largest component and return that component. </li>
+    <li>Calculate sperm cell length</li>
+</ol>
 
-        </div>
-        <div class="col-md-12">
-<div class="card-body">
-            <h5 class="card-title text-capitalize">Out of Sample Performance of a Deep Learning Based Registration Quality Assurance Method</h5>
-            <!-- <p class="card-text">Implemented by myself, advised by Dr. Geoffrey Hugo</p> -->
-            <div class="row ml-1 mr-1 p-0"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-</div>
-<div class="card-item col">
-<a href="/projects/4_project/"><div class="card hoverable">
-      <div class="row g-0">
-<div class="card-img col-md-12">
-          <figure>
+<h3 class="container-title"> GUI </h3>
 
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/multilevelstrategy-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/multilevelstrategy-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/multilevelstrategy-1400.webp"></source>
-    
+<p>GUI was implemented using PyQt5. PyQt5 is a comprehensive set of Python bindings for Qt v5.[2] We used opencv to read and preprocess the images. The pipeline is shown in Fig14. It will automaticallystore the intermediate image generated during the process.</p>
 
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/multilevelstrategy.png" width="auto" height="auto" alt="project thumbnail" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-        </div>
-        <div class="col-md-12">
-<div class="card-body">
-            <h5 class="card-title text-capitalize">Multilevel Deformable Registration DNN for 3D Medical Images</h5>
-            <!-- <p class="card-text">Implemented by myself in Keras/Tensorflow/PyTorch, advised by Dr. Geoffrey Hugo</p> -->
-            <div class="row ml-1 mr-1 p-0"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-</div>
-<div class="card-item col">
-<a href="/projects/2_project/"><div class="card hoverable">
-      <div class="row g-0">
-<div class="card-img col-md-12">
-          <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/registrationexample-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/registrationexample-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/registrationexample-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/registrationexample.png" width="auto" height="auto" alt="project thumbnail" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-        </div>
-        <div class="col-md-12">
-<div class="card-body">
-            <h5 class="card-title text-capitalize">Spline-based Image Registration</h5>
-            <!-- <p class="card-text">Implemented from scratch in Python by myself, advised by Dr. Geoffrey Hugo</p> -->
-            <div class="row ml-1 mr-1 p-0"><div class="github-icon">
-                <div class="icon" data-toggle="tooltip" title="Code Repository">
-                  <a href="https://github.com/XXZhou25/Bspline-registration.git" rel="external nofollow noopener" target="_blank"><i class="fab fa-github gh-icon"></i></a>
-                </div>
-</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-</div>
-<div class="card-item col">
-<a href="/projects/1_project/"><div class="card hoverable">
-      <div class="row g-0">
-<div class="card-img col-md-12">
-          <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/GTSRBExamples-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/GTSRBExamples-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/GTSRBExamples-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/GTSRBExamples.jpg" width="auto" height="auto" alt="project thumbnail" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-        </div>
-        <div class="col-md-12">
-<div class="card-body">
-            <h5 class="card-title text-capitalize">Traffic Sign Recognition</h5>
-            <!-- <p class="card-text">Implemented by myself, advised by Dr. Yang</p> -->
-            <div class="row ml-1 mr-1 p-0"><div class="github-icon">
-                <div class="icon" data-toggle="tooltip" title="Code Repository">
-                  <a href="https://github.com/XXZhou25/Traffic-Sign-Recognition-and-Classificatfion.git" rel="external nofollow noopener" target="_blank"><i class="fab fa-github gh-icon"></i></a>
-                </div>
-</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-</div>
-
-    </div>
-  </div>
-  <h2 class="category">Course Projects</h2>
-  <!-- Generate cards for each project -->
-  <div class="container">
-    <div class="row row-cols-2">
-<div class="card-item col">
-<a href="https://github.com/XXZhou25/Suspicious-Transaction-Detection/blob/main/PCA%20analysis%20of%20results.ipynb" rel="external nofollow noopener" target="_blank"><div class="card hoverable">
-      <div class="row g-0">
-<div class="col-md-12">
-<div class="card-body">
-            <h5 class="card-title text-capitalize">Suspicious Transaction Detection</h5>
-            <!-- <p class="card-text">Can you detect suspicious transactions out of normal ones?</p> -->
-            <div class="row ml-1 mr-1 p-0"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-</div>
-<div class="card-item col">
-<a href="https://github.com/XXZhou25/Measuring-sperm-cell-length/blob/main/report.pdf" rel="external nofollow noopener" target="_blank"><div class="card hoverable">
-      <div class="row g-0">
-<div class="col-md-12">
-<div class="card-body">
-            <h5 class="card-title text-capitalize">Measuring sperm cell length</h5>
-            <!-- <p class="card-text">Computational Geometry related, corperated with Yukun Li</p> -->
-            <div class="row ml-1 mr-1 p-0"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
-</div>
-
-    </div>
-  </div>
-</div>
 
           </article>
 
