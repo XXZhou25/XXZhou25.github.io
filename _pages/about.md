@@ -22,9 +22,8 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 
-I am actively seeking a full-time position in the fields of computer science, software development, machine learning, and data science, and I am open to relocating.
+I am actively seeking a full-time position in the fields of computer science, software development, machine learning, and data science.
 
-<!-- In my previous role, I worked as a Research Assistant at Washington University in St. Louis School of Medicine in Dr. Geoffrey Hugo's lab. Our research focused on solving the problem of medical image registration and quality assessment. Essentially, we aimed to develop a deep neural network that could efficiently and accurately register pairs of medical images. Since there is no definitive reference for the transformation between real-world medical images, we relied on experts or doctors to manually evaluate the quality of each registered image. To reduce the high costs and time involved in this manual process, our goal was to build a deep neural network capable of automatically assessing image quality. -->
+In my previous role, I worked as a Research Assistant at Washington University in St. Louis School of Medicine in Dr. Geoffrey Hugo's lab. Our research focused on developing effective tools utilizing machine learning and deep neural networks, for high-performance medical image registration and its quality assessment.
 
-Research interests: 
-Machine Learning, Computer Vision, Data Science
+ 
