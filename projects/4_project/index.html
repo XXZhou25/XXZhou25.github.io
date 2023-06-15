@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Unsupervised Deformable Registration DNN for 3D Medical Images | Xiaoxiao Zhou</title>
+    <title>Multilevel Deformable Registration DNN for 3D Medical Images | Xiaoxiao Zhou</title>
     <meta name="author" content="Xiaoxiao  Zhou">
     <meta name="description" content="Implemented by myself in Keras/Tensorflow/PyTorch, advised by Dr. Geoffrey Hugo">
     <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
@@ -117,7 +117,7 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">Unsupervised Deformable Registration DNN for 3D Medical Images</h1>
+            <h1 class="post-title">Multilevel Deformable Registration DNN for 3D Medical Images</h1>
             <p class="post-description">Implemented by myself in Keras/Tensorflow/PyTorch, advised by Dr. Geoffrey Hugo</p>
           </header>
 
@@ -192,8 +192,9 @@ first, which is subsequently improved on finer levels.</p>
     Figure 2. The proposed multi-level registration strategy
 </div>
 
-<h3 class="container-title"> Datasets </h3>
+<h3 class="container-title"> Experiments </h3>
 
+<p>The multi-level Voxelmorph is trained on Dirlab, tested on an 4D lungCT dataset.</p>
 <ul><h5 class="container-title"> Training dataset: Dirlab </h5></ul>
 <p>Deformable Image Registration Laboratory (Dirlab) 4DCT, https://med.emory.edu/departments/radiation-oncology/research-laboratories/deformable-image-registration/index.html</p>
 
@@ -220,7 +221,7 @@ first, which is subsequently improved on finer levels.</p>
     </div>
 </div>
 <div class="caption">
-    Figure 2. Example: one pair of 3D CT images from a patient in Dirlab dataset. 
+    Figure 3. Example: one pair of 3D CT images from a patient in Dirlab dataset. 
 </div>
 
 <ul><h5 class="container-title"> Testing dataset: 4D lungCT dataset </h5></ul>
@@ -248,32 +249,7 @@ On average, there were 169 landmarks per patient, with a standard deviation of 3
     </div>
 </div>
 <div class="caption">
-    Figure 3. Example: one pair of 3D CT images from a patient in 4D lung CT dataset. 
-</div>
-
-<h3 class="container-title"> Experiments </h3>
-
-<p>The multi-level Voxelmorph is trained on Dirlab, test on an 4D lungCT dataset.</p>
-
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        <figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/Dirlabtraining-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/Dirlabtraining-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/Dirlabtraining-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/Dirlabtraining.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-
-    </div>
+    Figure 4. Example: one pair of 3D CT images from a patient in 4D lung CT dataset. 
 </div>
 
 <div class="row">
@@ -296,6 +272,35 @@ On average, there were 169 landmarks per patient, with a standard deviation of 3
 
     </div>
 </div>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/multileveloncaliper-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/multileveloncaliper-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/multileveloncaliper-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/multileveloncaliper.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h3 class="container-title"> Results </h3>
+
+<p>Based on the given training data, the Dirlab dataset, the model performs normally by significantly reducing the landmarks distance error (LDE) for image pairs. However, when evaluating the model’s performance on the testing data from the 4D LungCT dataset, a relatively smaller reduction in LDE is observed. This outcome can be attributed to the inherent characteristics of the 4D LungCT dataset, which exhibits larger and more intricate anatomical variations resulting from treatment, in contrast to the Dirlab dataset that involves a breath cycle with no significant anatomical changes. Thus, the observed differences in LDE reduction between the two datasets can be deemed reasonable and aligned with expectations.</p>
+
+<h3 class="container-title"> Conclusions </h3>
+
+<p>In this project, we have investigated a DNN-based deformable registration method for 3D lung CTs. The model was trained on a small size public dataset and subsequently evaluated on a more complex in-house dataset. The results obtained from the testing dataset have showcased promising registration capabilities, despite the absence of significant variations observed in training data. Nevertheless, there remain several aspects for further exploration to enhance the model’s performance. These include investigating the impact of training data size and diversity, refining the model structure, and exploring the potential benefits of a multi-level registration strategy.</p>
 
 <h4 class="container-title"> Reference </h4>
 <p>[1]. Balakrishnan G, Zhao A, Sabuncu M R, et al. Voxelmorph: a learning framework for deformable medical image registration[J]. IEEE transactions on medical imaging, 2019, 38(8): 1788-1800.
