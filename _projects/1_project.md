@@ -6,8 +6,10 @@ img: assets/img/GTSRBExamples.jpg
 importance: 5
 category: Research Projects
 github: https://github.com/XXZhou25/Traffic-Sign-Recognition-and-Classificatfion.git
-cv_pdf: Extreme Learning Machine with Spatial and Time-Frequency Feature Fusion for High Performance Traffic Sign Recognition.pdf
 ---
+
+<h6> Paper link: </h6>
+<a href="'assets/pdf/Extreme Learning Machine with Spatial and Time-Frequency Feature Fusion for High Performance Traffic Sign Recognition.pdf}">
 
 <h3 class="container-title"> Abstract </h3>
 
