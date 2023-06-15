@@ -8,7 +8,8 @@ category: Research Projects
 github: https://github.com/XXZhou25/Bspline-registration.git
 ---
 
-<a href="'assets/pdf/B spline registration report_3.1_Final_Xiaoxiao.pdf}"> Paper link </a>
+<a href="https://drive.google.com/file/d/1tbEq5cUqf1oVPBx8e5KS1l04Wh_IdN5N/view?usp=drive_link"> Paper link </a>
+<a href="https://github.com/XXZhou25/Bspline-registration.git"> Source code link </a>
 
 <h3 class="container-title"> Introduction </h3>
 Image registration is a task aiming at finding a spatial transformation between two images to align them. In plain words, it aims to deform one image to reasonably resemble another image as closely as possible. The first image is referred to as the fixed image, serving as the target image. The second image is known as the moving image, which is intended to be registered or aligned with the fixed image. 

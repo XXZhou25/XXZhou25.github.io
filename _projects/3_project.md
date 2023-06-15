@@ -8,7 +8,7 @@ importance: 1
 category: Research Projects
 ---
 
-<a href="'assets/pdf/AAPM2020_ePoster_Xiao.pdf}"> Paper link </a>
+<a href="https://drive.google.com/file/d/1DgEF6JotMDPDQCMnSUlkhKKLenGvvo_O/view?usp=drive_link"> Paper link </a>
 
 <h3 class="container-title"> Introduction </h3>
 
